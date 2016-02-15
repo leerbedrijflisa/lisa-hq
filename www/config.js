@@ -4,6 +4,7 @@ System.config({
   transpiler: "babel",
   babelOptions: {
     "optional": [
+      "es7.decorators",
       "runtime",
       "optimisation.modules.system"
     ]
@@ -15,6 +16,7 @@ System.config({
 
   map: {
     "aurelia-bootstrapper": "npm:aurelia-bootstrapper@1.0.0-beta.1.1.2",
+    "aurelia-fetch-client": "npm:aurelia-fetch-client@1.0.0-beta.1.1.0",
     "aurelia-framework": "npm:aurelia-framework@1.0.0-beta.1.1.3",
     "babel": "npm:babel-core@5.8.35",
     "babel-runtime": "npm:babel-runtime@5.8.35",
@@ -64,6 +66,9 @@ System.config({
     },
     "npm:aurelia-event-aggregator@1.0.0-beta.1.1.1": {
       "aurelia-logging": "npm:aurelia-logging@1.0.0-beta.1.1.1"
+    },
+    "npm:aurelia-fetch-client@1.0.0-beta.1.1.0": {
+      "core-js": "npm:core-js@2.1.0"
     },
     "npm:aurelia-framework@1.0.0-beta.1.1.3": {
       "aurelia-binding": "npm:aurelia-binding@1.0.0-beta.1.1.3",
