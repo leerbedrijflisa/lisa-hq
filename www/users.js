@@ -18,7 +18,7 @@ export class App {
 
   activate() {
     var repos;
-    return this.http.fetch('orgs/leerbedrijflisa/repos?page=2')
+    return this.http.fetch('orgs/leerbedrijflisa/repos')
     .then(response => response.json())
     .then(repos => this.repos = repos);
   }

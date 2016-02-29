@@ -3,9 +3,10 @@ export class App {
     this.router = router;
     config.title = 'Aurelia';
     config.map([
-      { route: ['', 'home'],       name: 'home',       moduleId: 'users' },
-      { route: 'users',            name: 'users',      moduleId: 'users' },
-
+      { route: ['', 'home'],       name: 'home',       moduleId: 'home' },
+      { route: 'users',            name: 'users',      moduleId: 'users',   nav: true },
+      { route: 'users/:id/detail', name: 'userDetail', moduleId: 'users/detail' },
+      { route: 'files*path',       name: 'files',      moduleId: 'files/index',   href:'#files',   nav: true }
     ]);
   }
 }
