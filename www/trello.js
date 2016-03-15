@@ -3,7 +3,7 @@ import {HttpClient} from 'aurelia-fetch-client';
 
 
 @inject(HttpClient)
-export class Home {
+export class Trello {
   
 
   constructor(http) {

@@ -1,15 +1,16 @@
 <template>
     <h2>Repos van leerbedrijflisa</h2>
+
     <ul>
     	<li class="foo" repeat.for="repo of repos">
     		${repo.name}
     	</li>
     </ul>
-
-    <h2>Trello Boards</h2>
+    <h2></h2>
     <ul>
-    	<li class="foo" repeat.for="board of boards">
-    		${board.name}
-    	</li>
+        <li class="foo" repeat.for="project of arrayList">
+            ${project.github.name}
+            ${project.trello.id}
+        </li>
     </ul>
 </template>
