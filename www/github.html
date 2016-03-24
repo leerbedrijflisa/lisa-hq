@@ -1,11 +1,14 @@
 <template>
     <h2>Repos van leerbedrijflisa</h2>
 
-    <ul>
-    	<li class="foo" repeat.for="repo of repos">
-    		${repo.name}
-    	</li>
-    </ul>
+    <table>
+      <tr class="foo" repeat.for="repo of repos">
+        <td>${repo.name}</td>
+        <!--<td><a href="${repo.commits_url}">laatste commits</a></td>-->
+        <td>laatste push: ${repo.updated_at}</td>
+      </tr>
+    </table>
+
     <h2></h2>
     <ul>
         <li class="foo" repeat.for="project of arrayList">
