@@ -12,7 +12,7 @@ export class Github {
   }
 
   activate() {
-    var repos = this.http.fetch('orgs/leerbedrijflisa/repos')
+    var repos = this.http.fetch('orgs/leerbedrijflisa/repos?per_page=1000')
     .then(response => response.json())
     .then(repos => this.repos = repos);
     var trello = new Trello;
@@ -23,7 +23,6 @@ export class Github {
     //add github repo to the associated trello board (works)
     Promise.all([boards, repos]).then(function(values) {
       _this.arrayList = [];
-      
       var count = 0;
       for (var i in values[0]) {
         for (var a in values[1]) {
@@ -54,8 +53,8 @@ export class Github {
           }
         };
       };  
-        
     });
+    
 
     //this list is always empty (The problem)
     this.title = "Trello Boards";
@@ -79,6 +78,8 @@ export class Trello {
     .then(boards => 
       this.boards = boards);
   }
+
+  
 }
 
 

@@ -13,20 +13,22 @@ export class Repo {
 	}
 
 	activate(params) {
-        var repo = this.http.fetch('repositories/' + params.repoId)
-	    .then(response => response.json())
-	    .then(repo => this.repo = repo);
+      var repo = this.http.fetch('repositories/' + params.repoId)
+  	    .then(response => response.json())
+  	    .then(repo => this.repo = repo);
 
-        var assignees = this.http.fetch('repositories/' + params.repoId + '/contributors')
-	    .then(response => response.json())
-	    .then(assignees => this.assignees = assignees);
+      var assignees = this.http.fetch('repositories/' + params.repoId + '/contributors')
+  	    .then(response => response.json())
+  	    .then(assignees => this.assignees = assignees);
 	    var trello = new Trello;
     	trello.getBoards(params).then(board => this.board = board);
     	trello.getCards(params).then(card => this.cards = card);
-    	Promise.all(this.cards);
+      trello.getLists(params).then(list => this.lists = list);
+      Promise.all([cards, lists]).then(function(values) {
 
-
-    }
+      }
+      );
+  }
 }
 
 export class Trello {
@@ -40,11 +42,11 @@ export class Trello {
   }
 
   getBoards(params) {
-    return this.http.fetch('boards/' + params.boardId + '?key=8c37986e472cbf396b4cbde902b1d877&token=b331c1c3c659bec8bbd2cbe36108108330f0db66cfe1e6b2a15c3628fab2759a')
+    this.boards = this.http.fetch('boards/' + params.boardId + '?key=8c37986e472cbf396b4cbde902b1d877&token=b331c1c3c659bec8bbd2cbe36108108330f0db66cfe1e6b2a15c3628fab2759a')
     .then(response =>
-     response.json())
-    .then(board => 
-      this.board = board);
+     response.json());
+    return this.boards;
+    
   }
   getCards(params)	{
   	return this.http.fetch('boards/' + params.boardId + '/cards?key=8c37986e472cbf396b4cbde902b1d877&token=b331c1c3c659bec8bbd2cbe36108108330f0db66cfe1e6b2a15c3628fab2759a')
@@ -52,5 +54,12 @@ export class Trello {
      response.json())
     .then(cards => 
       this.cards = cards);
+  }
+  getLists(params)  {
+    return this.http.fetch('boards/' + params.boardId + '/lists?key=8c37986e472cbf396b4cbde902b1d877&token=b331c1c3c659bec8bbd2cbe36108108330f0db66cfe1e6b2a15c3628fab2759a')
+    .then(response =>
+     response.json())
+    .then(list => 
+      this.list = list);
   }
 }
