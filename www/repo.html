@@ -6,8 +6,10 @@
 	<ul>
 		<li repeat.for="assignee of assignees">${assignee.login}</li>
 	</ul>
+	<br>
 	<p><b>Cards</b></p>
-	<ul>
-		<li repeat.for="card of cards">${card.name}</li>
-	</ul>
+	<p repeat.for="card of cardArray">(${card.listName}) <b>${card.name}</b></p>
+	<br>
+	<p><b>Branches</b></p>
+	<p repeat.for="branch of branches"><a>${branch.name}</a></p>
 </template>
