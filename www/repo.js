@@ -22,9 +22,8 @@ export class Repo {
 	    .then(assignees => this.assignees = assignees);
 	    var trello = new Trello;
     	trello.getBoards(params).then(board => this.board = board);
-    	this.cards = trello.getCards(params);
+    	trello.getCards(params).then(card => this.cards = card);
     	Promise.all(this.cards);
-    	console.log(this.cards);  
 
 
     }
