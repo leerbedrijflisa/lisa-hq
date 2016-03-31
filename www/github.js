@@ -40,6 +40,7 @@ export class Github {
               _this.github = [];
               _this.trello['trello'] = values[0][i];
               _this.github['github'] = values[1][a];
+              _this.github['github']['test'] = "test";
               Array.push(_this.itemList, _this.github, _this.trello);
               //_this.itemList.push({'github': _this.github}, {'trello': _this.trello});
               //_this.itemList.push({'trello': _this.trello});
@@ -53,7 +54,7 @@ export class Github {
           }
         };
       };  
-      console.log(_this.arrayList);    
+        
     });
 
     //this list is always empty (The problem)

@@ -12,7 +12,9 @@ export class App {
       { route: 'github',            name: 'github',      moduleId: 'github',   nav: true },
       { route: 'trello',            name: 'trello',      moduleId: 'trello',   nav: true },
       { route: 'users/:id/detail', name: 'userDetail', moduleId: 'users/detail' },
-      { route: 'files*path',       name: 'files',      moduleId: 'files/index',   href:'#files',   nav: true }
+      { route: 'files*path',       name: 'files',      moduleId: 'files/index',   href:'#files',   nav: true },
+      { route: 'repo/:repoId/:boardId/',            name: 'repo',      moduleId: 'repo',   nav: false }
+
     ]);
   }
 
