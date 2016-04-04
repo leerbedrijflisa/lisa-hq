@@ -67,7 +67,7 @@ function timeSince(date) {
 
   var newDate = new Date(date).getTime();
 
-  var seconds = Math.floor(((new Date().getTime()/1000) - (newDate/1000));
+  var seconds = Math.floor((new Date().getTime()/1000) - (newDate/1000));
 
   var interval = Math.floor(seconds / 31536000);
 

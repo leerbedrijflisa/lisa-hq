@@ -12,39 +12,26 @@ export class Repo {
 	    });
 	}
 
-	activate(params) {
-      var repo = this.http.fetch('repositories/' + params.repoId)
+	async activate(params) {
+      let repo = await this.http.fetch('repositories/' + params.repoId)
   	    .then(response => response.json())
   	    .then(repo => this.repo = repo);
 
-      var assignees = this.http.fetch('repositories/' + params.repoId + '/contributors')
+      let assignees = await this.http.fetch('repositories/' + params.repoId + '/contributors')
   	    .then(response => response.json())
   	    .then(assignees => this.assignees = assignees);
 
-      var branches = this.http.fetch('repositories/' + params.repoId + '/branches')
+      let branches = await this.http.fetch('repositories/' + params.repoId + '/branches')
         .then(response => response.json())
         .then(branches => this.branches = branches);
 
-      var _this = this;
-      Promise.all([branches]).then(function([branchesList]) {
-          _this.branchDetailsList = [];
-          _this.branchDetailsList = branchesList;
-          var count = 0;
-          for (var branch in branchesList)  {
-            if(branchesList[count].name != null) {
-              function getDetails (count) {
-                let response = _this.http.get(branchesList[count].commit.url);
-              }
-              var details = getDetails(count);
-              console.log(details);
-            }
-            count++;
-          }
-          
+      var count = 0;
+      for (var branch in branches)  {
 
-          console.log(_this.branchDetailsList);
-        }
-      );
+        console.log(branches[count].commit.url);
+        count++;
+      }
+    
         
 	    var trello = new Trello;
     	trello.getBoards(params).then(board => this.board = board);
