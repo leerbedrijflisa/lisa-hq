@@ -24,6 +24,27 @@ export class Repo {
       var branches = this.http.fetch('repositories/' + params.repoId + '/branches')
         .then(response => response.json())
         .then(branches => this.branches = branches);
+
+      var _this = this;
+      Promise.all([branches]).then(function([branchesList]) {
+          _this.branchDetailsList = [];
+          _this.branchDetailsList = branchesList;
+          var count = 0;
+          for (var branch in branchesList)  {
+            if(branchesList[count].name != null) {
+              function getDetails (count) {
+                let response = _this.http.get(branchesList[count].commit.url);
+              }
+              var details = getDetails(count);
+              console.log(details);
+            }
+            count++;
+          }
+          
+
+          console.log(_this.branchDetailsList);
+        }
+      );
         
 	    var trello = new Trello;
     	trello.getBoards(params).then(board => this.board = board);
@@ -41,13 +62,12 @@ export class Repo {
         for (var card in _this.cardArray) {
           for (var list in listArray) {
             if (_this.cardArray[card].idList == listArray[list].id) {
-              _this.cardArray[card]['listName'] = listArray[list].name;
-            };
+                _this.cardArray[card]['listName'] = listArray[list].name;
+              };
+            }
+            count++;
           }
-          count++;
         }
-        console.log(_this.cardArray);
-      }
       );
   }
 }

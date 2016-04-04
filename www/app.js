@@ -8,6 +8,7 @@ export class App {
     config.title = 'Aurelia';
     config.map([
       { route: ['', 'home'],       name: 'home',       moduleId: 'home' },
+      { route: 'test',            name: 'test',      moduleId: 'test',   nav: true },
       { route: 'users',            name: 'users',      moduleId: 'users',   nav: true },
       { route: 'github',            name: 'github',      moduleId: 'github',   nav: true },
       { route: 'trello',            name: 'trello',      moduleId: 'trello',   nav: true },

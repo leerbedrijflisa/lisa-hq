@@ -1,9 +1,14 @@
 <template>
-<script type="text/javascript" src=""></script>
-  <p><a href="/#/github">github</a> - <a href="/#/trello">trello</a> - <a href="/">index</a></p>
-  
-  <div class="page-host">
-    <router-view></router-view>
+  <link rel="stylesheet" href="style.css">
+  <div class="header greencontainer">
+    <a class="headerh2" href="/"><h2>Index</h2></a>
+    <a class="headerh2" href="/#/github"><h2>Github</h2></a>
+    <a class="headerh2" href="/#/trello"><h2>Trello</h2></a>
   </div>
-
+  <br>
+  <div class="greencontainer">
+    <div class="page-host">
+      <router-view></router-view>
+    </div>
+  </div>
 </template>
