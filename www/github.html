@@ -1,19 +1,16 @@
 <template>
-    <h2>Repos van leerbedrijflisa</h2>
+    <h2 class="title">Repos van leerbedrijflisa</h2>
 
     <table>
-      <tr class="foo" repeat.for="repo of repos">
-        <td>${repo.name}</td>
+      <tr class="foo" repeat.for="project of arrayList">
+        <td><a route-href="route: repo; params.bind: {repoId:project.github.id, boardId:project.trello.id}">${project.github.name}</a></td>
         <!--<td><a href="${repo.commits_url}">laatste commits</a></td>-->
-        <td>laatste push: ${repo.updated_at}</td>
+        <td>laatste push: ${project.github.pushed_at}</td>
+        <td>${project.trello.idList}</td>
       </tr>
     </table>
 
     <h2></h2>
     <ul>
-        <li class="foo" repeat.for="project of arrayList">
-            ${project.github.name}
-            ${project.trello.id}
-        </li>
     </ul>
 </template>
