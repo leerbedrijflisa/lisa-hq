@@ -1,0 +1,15 @@
+<template>
+	<h2>${repo.name}</h2>
+	<p>${board.name}</p>
+	<p>laatste push: ${repo.updated_at}</p>
+	<p><b>Contributors</b></p>
+	<ul>
+		<li repeat.for="assignee of assignees">${assignee.login}</li>
+	</ul>
+	<br>
+	<p><b>Cards</b></p>
+	<p repeat.for="card of cardArray">(${card.listName}) <b>${card.name}</b></p>
+	<br>
+	<p><b>Branches</b></p>
+	<p repeat.for="branch of branchDetailsList"><a>${branch.name} ${branch.details.author.login}</a></p>
+</template>
