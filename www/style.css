@@ -1,4 +1,4 @@
-body {
+body{
   margin:0px 0px 0px 0px;
   font-family: 'Open Sans', sans-serif;
   background-color:#e74c3c;
@@ -9,43 +9,43 @@ td{
 }
 
 /* Navbar */
-.navbar {
+.navbar{
   width: 100%;
   background: #c0392b;
   height: 12%;
   max-height: 46px;
 }
-. {
+.{
 height: 0px;
 }
 .logo{
   padding-top: 6px !important;
 }
-.logoimg {
+.logoimg{
   border-radius: 5px;
   border: 2px solid #E2E4E6;
   width: 36px;
   height: 36px;
   float: left;
 }
-.navbar ul {
+.navbar ul{
   background: #c0392b;
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
 }
-.navbar li {
+.navbar li{
   float: left;
 }
-.navbar li a {
+.navbar li a{
   display: block;
   color: white;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
 }
-.active {
+.active{
   background-color: #4CAF50;
 }
 
@@ -54,7 +54,7 @@ height: 0px;
   margin-top: 0px;
 }
 
-.greycontainer {
+.greycontainer{
   margin:18px 8px 8px 8px;
   border-radius: 5px;
   border: 5px solid #E2E4E6;
