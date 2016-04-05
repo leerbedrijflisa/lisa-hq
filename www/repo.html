@@ -11,5 +11,5 @@
 	<p repeat.for="card of cardArray">(${card.listName}) <b>${card.name}</b></p>
 	<br>
 	<p><b>Branches</b></p>
-	<p repeat.for="branch of branchDetailsList"><a>${branch.name} ${branch.details.author.login}</a></p>
+	<p repeat.for="branch of branches"><b>${branch.name}</b> <a href="${branch.commit.details.html_url}">Laatste commit door: ${branch.commit.details.author.login} ${branch.commit.details.commit.committer.date}</a></p>
 </template>

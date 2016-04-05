@@ -28,7 +28,14 @@ export class Repo {
       var count = 0;
       for (var branch in branches)  {
 
-        console.log(branches[count].commit.url);
+        branches[count].commit.details = await fetch(branches[count].commit.url).then(response => response.json());
+        var dateObj = new Date(branches[count].commit.details.commit.committer.date);
+        var month = dateObj.getUTCMonth() + 1; //months from 1-12
+        var day = dateObj.getUTCDate();
+        var year = dateObj.getUTCFullYear();
+
+        branches[count].commit.details.commit.committer.date = year + "/" + month + "/" + day;
+        console.log(branches[count].commit);
         count++;
       }
     
@@ -37,25 +44,21 @@ export class Repo {
     	trello.getBoards(params).then(board => this.board = board);
     	// trello.getCards(params).then(card => this.cards = card);
      //  trello.getLists(params).then(list => this.lists = list);
-      var cards = trello.getCards(params);
-      var lists = trello.getLists(params);
-      var _this = this;
-      Promise.all([cards, lists]).then(function([cardList, listList]) {
-        _this.cardArray = [];
-        var listArray = [];
-        _this.cardArray = cardList;
-        listArray = listList;
-        var count = 0;
-        for (var card in _this.cardArray) {
-          for (var list in listArray) {
-            if (_this.cardArray[card].idList == listArray[list].id) {
-                _this.cardArray[card]['listName'] = listArray[list].name;
-              };
-            }
-            count++;
-          }
+      let cards = await trello.getCards(params);
+      let lists = await trello.getLists(params);
+      this.cardArray = [];
+      var listArray = [];
+      this.cardArray = cards;
+      listArray = lists;
+      var count = 0;
+      for (var card in cards) {
+        for (var list in lists) {
+          if (this.cardArray[card].idList == listArray[list].id) {
+              this.cardArray[card]['listName'] = listArray[list].name;
+          };
         }
-      );
+        count++;
+      }
   }
 }
 
