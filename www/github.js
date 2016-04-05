@@ -40,7 +40,7 @@ export class Github {
               _this.trello['trello'] = values[0][i];
               _this.github['github'] = values[1][a];
               _this.github['github']['test'] = "test";
-              _this.github['github']['updated_at'] = timeSince(_this.github['github']['updated_at']);
+              _this.github['github']['pushed_at'] = timeSince(_this.github['github']['pushed_at']);
 
 
               Array.push(_this.itemList, _this.github, _this.trello);
