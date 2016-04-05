@@ -1,12 +1,15 @@
 <template>
   <link rel="stylesheet" href="style.css">
-  <div class="header greencontainer">
-    <a class="headerh2" href="/"><h2>Index</h2></a>
-    <a class="headerh2" href="/#/github"><h2>Github</h2></a>
-    <a class="headerh2" href="/#/trello"><h2>Trello</h2></a>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+  <div class="navbar">
+    <ul class="">
+      <li ><a class="logo" href="/"><img class="logoimg" src="img/logo.jpg"></a></li>
+      <li><a class="" href="/#/github">Github</a></li>
+      <li><a class="" href="/#/trello">Trello</a></li>
+    </ul>
+    <br>
   </div>
-  <br>
-  <div class="greencontainer">
+  <div class="greycontainer">
     <div class="page-host">
       <router-view></router-view>
     </div>
