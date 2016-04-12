@@ -1,0 +1,9 @@
+<template>  
+  <ul>
+    <li repeat.for="repo of repos">
+      <a href.bind="repo.html_url" target="_blank">
+        ${repo.name} (${repo.stargazers_count} stars)
+      </a>
+    </li>
+  </ul>
+</template>  
