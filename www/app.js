@@ -7,11 +7,9 @@ export class App {
     this.router = router;
     config.title = 'Aurelia';
     config.map([
-      { route: ['', 'home'],       name: 'home',       moduleId: 'home' },
       { route: 'test',            name: 'test',      moduleId: 'test',   nav: true },
       { route: 'users',            name: 'users',      moduleId: 'users',   nav: true },
-      { route: 'github',            name: 'github',      moduleId: 'github',   nav: true },
-      { route: 'trello',            name: 'trello',      moduleId: 'trello',   nav: true },
+      { route: ['', 'home'],            name: 'github',      moduleId: 'github',   nav: true },
       { route: 'users/:id/detail', name: 'userDetail', moduleId: 'users/detail' },
       { route: 'files*path',       name: 'files',      moduleId: 'files/index',   href:'#files',   nav: true },
       { route: 'repo/:repoId/:boardId/', name: 'repo', moduleId: 'repo',   nav: false },

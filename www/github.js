@@ -7,7 +7,12 @@ export class Github {
     this.http.configure(config => {
       config
         .useStandardConfiguration()
-        .withBaseUrl('https://api.github.com/');
+        .withBaseUrl('https://api.github.com/', {
+        body: JSON.stringify({
+          username: 'koffielyder',
+          token: 'ac614d2a96357c590b73cc85a05b2edebb2de91a'
+        })
+      });
     });
   }
 

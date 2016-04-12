@@ -59,6 +59,7 @@ export class Repo {
         }
         count++;
       }
+      console.log(this.cardArray[89].labels);
   }
 }
 

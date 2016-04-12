@@ -8,7 +8,7 @@
 	</ul>
 	<br>
 	<p><b>Cards</b></p>
-	<p repeat.for="card of cardArray">(${card.listName}) <b>${card.name}</b></p>
+	<div repeat.for="card of cardArray"><p repeat.for="label of card.labels" style="background-color: ${label.color}">${label.name} ${label.color}</p><b>${card.name}</b></div>
 	<br>
 	<p><b>Branches</b></p>
 	<p repeat.for="branch of branches"><b>${branch.name}</b> <a href="${branch.commit.details.html_url}">Laatste commit door: ${branch.commit.details.author.login} ${branch.commit.details.commit.committer.date}</a></p>
