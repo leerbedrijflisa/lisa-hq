@@ -1,14 +1,14 @@
 # lisa-hq
-Lisa-HQ is een webapplicatie gemaakt in Aurelia waarmee je een overzicht krijgt van de repositories in combinatie met het Trello board dat erbij hoort. Je kan hiermee snel informatie zien over de repo, zoals wie er het laatst gepushed geeft.
+Lisa-HQ is an webapp made in Aurelia that gives you an overview of the repositories from Lisa in combination with the trello board that belongs to it. This can be used to quickly view information about the repo, for example who pushed last.
 
-#Installatie
-Plaats de 'example.config.js' in de 'www' map en verander de naam naar 'config.js'.
+#Installation
+Place the'example.config.js' in the 'www' map and change the name to 'config.js'.
 
-Zorg ervoor dat je npm en jspm geinstalleerd heb.
+Make sure you installed npm and jspm
 >npm install
 >jspm install
 
-Installeer dan gulp
+Now install gulp
 >npm install --global gulp-cli
 >npm install --save-dev gulp
 
