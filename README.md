@@ -4,7 +4,7 @@ Lisa-HQ is an webapp made in Aurelia that gives you an overview of the repositor
 # Installation
 Place the 'example.config.js' in the 'www' map and change the name to 'config.js'.
 
-Make sure you installed npm and jspm
+Make sure you installed npm and jspm. You might still want to do this even when you have it installed.
 ```sh
 >npm install
 >jspm install
@@ -17,4 +17,10 @@ Now install gulp
 Now run it
 ```sh
 >gulp serve
+```
+
+Not working? Try
+```sh
+>jspm update
+>npm update
 ```
